@@ -14,9 +14,15 @@
         
         function minhafuncao(arg1,arg2){
                 const numeros = [25, 36, 49];
-  const raizes = numeros.map(Math.sqrt);
-  return raizes;
+                const raiz = numeros.map(Math.sqrt);
+                return raiz;
+                alert(25,36,49);
         }
+
+        function escreveDiv(texto){
+            document.getElementById("minha Div").innerHTML = texto;
+        }
+        
 
 
         </script> 
@@ -31,5 +37,9 @@
 
             <button onclick="minhafuncao(7,7)">raiz de 49</button><br/>
         </div>
+
+        <h1> Escrevendo na Div </h1>
+        <button onclick="escrevedDiv (' <h1> Programação Web </h1>')" >Escrever</button> <br><br>
+        <div id="minha Div"></div>
     </body>
 </html>
