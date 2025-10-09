@@ -12,19 +12,11 @@
 
         <script >
         
-        function minhafuncao(numero){
-             var raiz  = math.sqrt(arg);
-             alert("Raiz de"+ arg1 + "é" + raiz)
+        function raiz(numero){
+             var raiz  = Math.sqrt(numero);
+             alert("Raiz de"+ numero + "é" + raiz);
         }
 
-        function minhafuncao(numero){
-             var raiz  = math.sqrt(arg);
-             alert("Raiz de"+ arg2 + "é" + raiz)
-        }
-        function minhafuncao(numero){
-             var raiz  = math.sqrt(arg);
-             alert("Raiz de"+ arg3 + "é" + raiz)
-        }
 
         function escreveDiv(texto){
             document.getElementById("minha Div").innerHTML = texto;
@@ -44,11 +36,11 @@
     <body>
         <h1>Raiz quadrada</h1>
 
-            <button onclick="minhafuncao(25)"> raiz de 25</button><br/>
+            <button onclick="raiz(25)"> raiz de 25</button><br/>
 
-            <button onclick="minhafuncao(36)">raiz de 36</button><br/>
+            <button onclick="raiz(36)">raiz de 36</button><br/>
 
-            <button onclick="minhafuncao(49)">raiz de 49</button><br/>
+            <button onclick="raiz(49)">raiz de 49</button><br/>
         
         
         <hr>
