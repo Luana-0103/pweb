@@ -30,7 +30,10 @@
             for (var i = 0; i <linguagens.length; i++){
 
                 var tag = '<h5>' + i + '-' + linguagens[i] + '</h5>';
-                       }
+
+                container.innerHTML += tag;
+            
+            }
         }
         function escreveDiv2(){
             texto = prompt('Digite um texto qualquer');
