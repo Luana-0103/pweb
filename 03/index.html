@@ -1,9 +1,67 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>atividade 3</title>
+        <title>Array</title>
+        <style>
+            .conteiner{
+                float: left;
+                width: 20%;box-sizing: border-box;
+                padding: 6px;
+            }
+        </style>
+
+        <script >
+            Let linguagens = Array();
+
+            linguagens[0] = 'Dart';
+            linguagens[1] = 'PHP';
+            linguagens[2] = 'Java';
+            linguagens[3] = 'Python';
+            linguagens[4] = 'Perl';
+            linguagens[5] = 'Ruby on Rails';
+            linguagens[6] = 'C ++';
+        </script>
+
+        <script>
+        function escreveDiv(texto){
+            document.getElementById("minha Div").innerHTML = texto;
+        }
+        function escreveDiv2(){
+            texto = prompt('Digite um texto qualquer');
+            document.getElementById("minhaDiv2").innerHTML = texto;
+        }
+
+        function contar(){
+            let n = +prompt("Digite um número:");
+            let t ="";
+            for(let i=1; i<=n; i++) t+= i+"<br>";
+            res.innerHTML = t;
+        }
+        </script> 
+
     </head>
     <body>
+        <h1>Array de Linguagens </h1>
+
+            <button onclick="mostrarListaLinguagens()"> Criar Array</button> <br><br>
+
+            <button onclick="posicaoLinguagens()">Posicao no Array</button>
         
+        <hr>
+        
+        <h1> Escrevendo na Div </h1>
+        <button onclick="escreveDiv (' <h1> Programação Web </h1><input></input>')" >Escrever</button><br><br>
+        <div id="minha Div"></div>
+
+        <hr>
+        <h1>Escrevendo texto Dinâmico</h1>
+        <button onclick="escreveDiv2()"> Escrever</button> <br><br>
+        <div id="minhaDiv2"></div>
+
+        <hr>
+        <h1>Desafio</h1>
+        <button onclick="contar()"> Contar </button> <br><br>
+        <div id="res"></div>
+
     </body>
 </html>
