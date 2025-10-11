@@ -26,7 +26,7 @@
         function mostrarListaLinguagens(){
 
             const container = document.getElementById('minha Div');
-                 for (var i = 0; i <linguagens.length; i++){
+                 for (var i = 0; i < linguagens.length; i++) {
                     var tag = '<h5>' + i + '-' + linguagens[i] + '</h5>';
                     container.innerHTML += tag;
             
@@ -36,13 +36,6 @@
         function posicaoLinguagens(){
             var indice = prompt('Qual posição da lista deseja consultar?');
             alert(linguagens[indice]);
-        }
-
-        function contar(){
-            let n = +prompt("Digite um número:");
-            let t ="";
-            for(let i=1; i<=n; i++) t+= i+"<br>";
-            res.innerHTML = t;
         }
         </script> 
 
@@ -56,20 +49,6 @@
 
             <div id="minhaDiv"></div>
         <hr>
-        
-        <h1> Escrevendo na Div </h1>
-        <button onclick="escreveDiv (' <h1> Programação Web </h1><input></input>')" >Escrever</button><br><br>
-        <div id="minha Div"></div>
-
-        <hr>
-        <h1>Escrevendo texto Dinâmico</h1>
-        <button onclick="escreveDiv2()"> Escrever</button> <br><br>
-        <div id="minhaDiv2"></div>
-
-        <hr>
-        <h1>Desafio</h1>
-        <button onclick="contar()"> Contar </button> <br><br>
-        <div id="res"></div>
-
+    
     </body>
 </html>
