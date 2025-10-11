@@ -26,18 +26,16 @@
         function mostrarListaLinguagens(){
 
             const container = document.getElementById('minha Div');
-
-            for (var i = 0; i <linguagens.length; i++){
-
-                var tag = '<h5>' + i + '-' + linguagens[i] + '</h5>';
-
-                container.innerHTML += tag;
+                 for (var i = 0; i <linguagens.length; i++){
+                    var tag = '<h5>' + i + '-' + linguagens[i] + '</h5>';
+                    container.innerHTML += tag;
             
-            }
+                }
         }
-        function escreveDiv2(){
-            texto = prompt('Digite um texto qualquer');
-            document.getElementById("minhaDiv2").innerHTML = texto;
+
+        function posicaoLinguagens(){
+            var indice = prompt('Qual posição da lista deseja consultar?');
+            alert(linguagens[indice]);
         }
 
         function contar(){
@@ -55,7 +53,8 @@
             <button onclick="mostrarListaLinguagens()"> Criar Array</button> <br><br>
 
             <button onclick="posicaoLinguagens()">Posição no Array</button>
-        
+
+            <div id="minhaDiv"></div>
         <hr>
         
         <h1> Escrevendo na Div </h1>
