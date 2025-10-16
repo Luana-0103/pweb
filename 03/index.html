@@ -38,16 +38,17 @@
                  for (var i = 0; i < linguagens.length; i++) {
                     var tag = '<h5>' + i + '-' + linguagens[i] + '</h5>';
                     container.innerHTML += tag;
-                    if (i > 6 ) {
-                        alert( "erro" );
-                    }  
-            
                 }
         }
 
         function posicaoLinguagens(){
-            var indice = prompt('Qual posição da lista deseja consultar?');
-            alert(linguagens[indice]);
+             if (i > 6 ){
+                        alert( "erro" );
+                    }  
+            else{
+                var indice = prompt('Qual posição da lista deseja consultar?');
+                alert(linguagens[indice]);
+            }
         }
 
         function mostrarListafrutas(){
