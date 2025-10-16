@@ -35,21 +35,19 @@
        
         function mostrarListaLinguagens(){
             const container = document.getElementById('minhaDiv');
-                if ( i > 6) {
-                    console.log("Erro: O número não pode ser maior que 10.");
-                } 
-                else { 
                  for (var i = 0; i < linguagens.length; i++) {
                     var tag = '<h5>' + i + '-' + linguagens[i] + '</h5>';
                     container.innerHTML += tag;
-                    }
+            
                 }
-               
         }
 
         function posicaoLinguagens(){
             var indice = prompt('Qual posição da lista deseja consultar?');
             alert(linguagens[indice]);
+            if i > 6{
+                alert( 'erro' )
+            }  
         }
 
         function mostrarListafrutas(){
