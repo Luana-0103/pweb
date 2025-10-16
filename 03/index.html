@@ -33,14 +33,14 @@
                 }
         }
 
-        function posicaoLinguagens(){
-            if ( indice > 6 ) {
-                    alert( "erro" );
-            }  
-            else{
+        function posicaoLinguagens() {
                 var indice = prompt('Qual posição da lista deseja consultar?');
-                alert(linguagens[indice]);
-            }
+                if ( indice < 0 || indice > linguagens.length-1 ) {
+                    alert( "Posição Inválida" );
+                }  
+                else{
+                   alert(linguagens[indice]);
+                }        
         }
 
         function mostrarListafrutas(){
