@@ -2,15 +2,7 @@
 <html>
     <head>
         <title>Array</title>
-        <style>
-            .conteiner{
-                float: left;
-                width: 20%;box-sizing: border-box;
-                padding: 6px;
-            }
-        </style>
-
-        <script >
+    <script >
 
             let linguagens = Array();
 
@@ -34,17 +26,17 @@
 
        
         function mostrarListaLinguagens(){
-            const container = document.getElementById('minhaDiv');
-                 for (var i = 0; i < linguagens.length; i++) {
+        const container = document.getElementById('minhaDiv');
+                for (var i = 0; i < linguagens.length; i++) {
                     var tag = '<h5>' + i + '-' + linguagens[i] + '</h5>';
                     container.innerHTML += tag;
                 }
         }
 
         function posicaoLinguagens(){
-             if ( var indice > 6 ){
-                        alert( "erro" );
-                    }  
+            if ( indice > 6 ) {
+                    alert( "erro" );
+            }  
             else{
                 var indice = prompt('Qual posição da lista deseja consultar?');
                 alert(linguagens[indice]);
@@ -65,7 +57,7 @@
             var indice = prompt('Qual posição da lista deseja consultar?');
             alert(frutas[indice]);
         }
-        </script> 
+    </script> 
 
     </head>
     <body>
