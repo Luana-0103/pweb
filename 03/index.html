@@ -55,8 +55,13 @@
 
         function posicaofrutas(){
             var indice = prompt('Qual posição da lista deseja consultar?');
-            alert(frutas[indice]);
-        }
+                 if ( indice < 0 || indice > frutas.length-1 ) {
+                    alert( "Posição Inválida" );
+                }  
+                else{
+                   alert(frutas[indice]);
+                }
+            }
     </script> 
 
     </head>
