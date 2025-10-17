@@ -4,27 +4,73 @@
         <title>Metódos Push e Pop</title>
 
         <script >
-        
-        function raiz(numero){
-             var raiz  = Math.sqrt(numero);
-             alert("Raiz de " + numero + " é " + raiz);
+
+            let linguagens = Array();
+
+            linguagens[0] = 'Dart';
+            linguagens[1] = 'PHP';
+            linguagens[2] = 'Java';
+            linguagens[3] = 'Python';
+            linguagens[4] = 'Perl';
+            linguagens[5] = 'Ruby on Rails';
+            linguagens[6] = 'C ++';
+
+            let frutas = Array();
+
+            frutas[0] = 'Laranja';
+            frutas[1] = 'Maça';
+            frutas[2] = 'Pêra';
+            frutas[3] = 'Melancia';
+            frutas[4] = 'Mamão';
+            frutas[5] = 'Caju';
+            frutas[6] = 'Manga';
+
+       
+        function mostrarListaLinguagens(){
+        const container = document.getElementById('minhaDiv');
+                for (var i = 0; i < linguagens.length; i++) {
+                    var tag = '<h5>' + i + '-' + linguagens[i] + '</h5>';
+                    container.innerHTML += tag;
+                }
         }
 
+        function posicaoLinguagens() {
+                var indice = prompt('Qual posição da lista deseja consultar?');
+                if ( indice < 0 || indice > linguagens.length-1 ) {
+                    alert( "Posição Inválida" );
+                }  
+                else{
+                   alert(linguagens[indice]);
+                }        
+        }
 
-        function escreveDiv(texto){
-            document.getElementById("minha Div").innerHTML = texto;
-        }
-        function escreveDiv2(){
-            texto = prompt('Digite um texto qualquer');
-            document.getElementById("minhaDiv2").innerHTML = texto;
+        function mostrarListafrutas(){
+
+            const container = document.getElementById('minhaDiv2');
+                 for (var i = 0; i < frutas.length; i++) {
+                    var tag = '<h5>' + i + '-' + frutas[i] + '</h5>';
+                    container.innerHTML += tag;
+            
+                }
         }
 
-        function contar(){
-            let n = +prompt("Digite um número:");
-            let t ="";
-            for(let i=1; i<=n; i++) t+= i+"<br>";
-            res.innerHTML = t;
+        function posicaofrutas(){
+            var indice = prompt('Qual posição da lista deseja consultar?');
+                 if ( indice < 0 || indice > frutas.length-1 ) {
+                    alert( "Posição Inválida" );
+                }  
+                else{
+                   alert(frutas[indice]);
+                }
+            }
+
+        function excluir(){
+            let linguagens
+            let removido = linguagens.pop();
+            console.log(linguagens);
+            console.log(removido);
         }
+
         </script> 
 
     </head>
