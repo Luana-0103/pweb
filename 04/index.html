@@ -5,100 +5,71 @@
 
         <script >
 
-            let linguagens = Array();
-
-            linguagens[0] = 'Dart';
-            linguagens[1] = 'PHP';
-            linguagens[2] = 'Java';
-            linguagens[3] = 'Python';
-            linguagens[4] = 'Perl';
-            linguagens[5] = 'Ruby on Rails';
-            linguagens[6] = 'C ++';
-
-            let frutas = Array();
-
-            frutas[0] = 'Laranja';
-            frutas[1] = 'Maça';
-            frutas[2] = 'Pêra';
-            frutas[3] = 'Melancia';
-            frutas[4] = 'Mamão';
-            frutas[5] = 'Caju';
-            frutas[6] = 'Manga';
-
-       
-        function mostrarListaLinguagens(){
-        const container = document.getElementById('minhaDiv');
-                for (var i = 0; i < linguagens.length; i++) {
-                    var tag = '<h5>' + i + '-' + linguagens[i] + '</h5>';
-                    container.innerHTML += tag;
-                }
-        }
-
-        function posicaoLinguagens() {
-                var indice = prompt('Qual posição da lista deseja consultar?');
-                if ( indice < 0 || indice > linguagens.length-1 ) {
-                    alert( "Posição Inválida" );
-                }  
-                else{
-                   alert(linguagens[indice]);
-                }        
-        }
-
-        function mostrarListafrutas(){
-
-            const container = document.getElementById('minhaDiv2');
-                 for (var i = 0; i < frutas.length; i++) {
-                    var tag = '<h5>' + i + '-' + frutas[i] + '</h5>';
-                    container.innerHTML += tag;
+            let Pessoas = Array();
+        
             
-                }
-        }
 
-        function posicaofrutas(){
-            var indice = prompt('Qual posição da lista deseja consultar?');
-                 if ( indice < 0 || indice > frutas.length-1 ) {
-                    alert( "Posição Inválida" );
-                }  
+            function mostrarLista(){
+            const container = document.getElementById('minhaDiv');
+            container.innerHTML = "";
+                    for (var i = 0; i < Pessoas.length; i++) {
+                        var tag = '<h5>' + i + '-' + Pessoas[i] + '</h5>';
+                        container.innerHTML += tag;
+                    }
+            }
+
+            function adicionar(){
+                var nome = prompt('Digite um nome qualquer');
+                Pessoas.push(nome);
+                mostrarLista();
+            }
+
+            function posicao() {
+                    var indice = prompt('Qual posição da lista deseja consultar?');
+                    indice = Number(indice);
+                    if ( indice < 0 || indice >= Pessoas.length) {
+                        alert( "Posição Inválida" );
+                    }  
+                    return;
+                    alert('Posição' +indice+ 'está o' +Pessoas[indice]);
+
+            function remover(){
+                if(Pessoas.length === 0){
+                    alert('a lista está vazia!');
+                }
                 else{
-                   alert(frutas[indice]);
+                    let removido = Pessoas.pop();
+                    alert('removido:' + removido);
+                    mostrarLista();
                 }
             }
 
-        function excluir(){
-            let linguagens
-            let removido = linguagens.pop();
-            console.log(linguagens);
-            console.log(removido);
-        }
+            function limpar(){
+                Pessoas = [];
+                mostrarLista();
+            }
 
         </script> 
 
     </head>
     <body>
-        <h1>Raiz quadrada</h1>
+        <h1>Lista De Pessoas </h1>
 
-            <button onclick="raiz(25)"> raiz de 25</button><br/>
+            <button onclick="adicionar()"> Adcione um nome</button> <br><br>
 
-            <button onclick="raiz(36)">raiz de 36</button><br/>
+            <button onclick="posicaoLinguagens()">Posição</button>
 
-            <button onclick="raiz(49)">raiz de 49</button><br/>
-        
-        
+            <button onclick="excluir()">remover</button> <br></br>
+
+            <div id="minhaDiv"></div>
         <hr>
-        
-        <h1> Escrevendo na Div </h1>
-        <button onclick="escreveDiv (' <h1> Programação Web </h1><input></input>')" >Escrever</button><br><br>
-        <div id="minha Div"></div>
+        <h1>Array de Frutas </h1>
 
-        <hr>
-        <h1>Escrevendo texto Dinâmico</h1>
-        <button onclick="escreveDiv2()"> Escrever</button> <br><br>
-        <div id="minhaDiv2"></div>
+            <button onclick="mostrarListafrutas()"> Criar Array</button> <br><br>
 
-        <hr>
-        <h1>Desafio</h1>
-        <button onclick="contar()"> Contar </button> <br><br>
-        <div id="res"></div>
+            <button onclick="posicaofrutas()">Posição no Array</button>
+
+            <div id="minhaDiv2"></div>
 
     </body>
 </html>
