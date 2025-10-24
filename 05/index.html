@@ -1,9 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>05</title>
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pessoas</title>
     
+    <script>
+    
+    let listalivros = [];
+    
+    function mostrarLista() {
+        const container = document.getElementById('minhaDiv');
+        container.innerHTML = ''; 
+
+        for (let i = 0; i < listalivros.length; i++) {
+            const livro = listalivros[i];
+            const tag = '<h5>' + i + '- livro: ' + pessoa.autor + ' | autor: '+ pessoa.ano + '</h5>';
+            container.innerHTML += tag;
+        }
+    }
+	
+	function limpaCampos() {
+	  document.getElementById('livro').value = '';
+      document.getElementById('autor').value = '';
+      document.getElementById('ano').value = '';
+
+	}
+
+    function adicionar() {
+	  // pega os valores digitados nos inputs
+  	    const livro = document.getElementById('livro').value;
+        const autor = document.getElementById('autor').value;
+        const ano = document.getElementById('ano').value;
+
+        pilhaPessoas.push({ livro, autor, ano });
+
+      // limpa os campos e atualiza a lista
+	    limpaCampos();
+        mostrarLista();
+    }
+
+    function posicao() {
+      const indice = Number(prompt('Qual livro da lista deseja consultar?'));
+
+      if (indice < 0 || indice >= listalivros.length) {
+        alert('Posição inválida!');
+        return;
+      }
+
+      const livro = listalivros[indice];
+      alert('Na posição ' + indice + ' está: livro: ' + livro.autor + ' - autor: ' + autor.ano);
+    }
+
+    function limparLista() {
+      listalivros = [];
+      mostrarLista();
+    }
+
+    function remover() {
+      if (listalivros.length === 0) {
+        alert('A lista está vazia!');
+      } else {
+        const removido = listalivros.pop();
+        alert('Removido: ' + removido.livro + ' - ' + removido.autor + ' - ' + removido.ano);
+        mostrarLista();
+      }
+    }
+
+  </script>
+</head>
+
+<body>
+  <h1>Lista de Livros</h1>
+
+	<label>Livro:</label>
+	<input type="text" id="livro" placeholder="Digite um nome"> 
+
+	<label>Autor:</label>
+	<input type="text" id="contato" placeholder="Digite o autor">
+
+	<button onclick="adicionar()">Adicionar</button>
+	
+	
+	<hr>
+
+    <button onclick="posicao()">mostrar Lista</button>
+    <button onclick="remover()">Remover o Último</button>
+    <button onclick="limparLista()">Limpar</button>
+
+    <br><br>
+  
+    <div id="minhaDiv"></div>
+  
+    <hr>
+  
 </body>
 </html>
