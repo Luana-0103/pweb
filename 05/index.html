@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Pessoas</title>
-    
-    <script>
-    
-    let listalivros = [];
-    
-    function mostrarLista() {
-        const container = document.getElementById('minhaDiv');
-        container.innerHTML = ''; 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Pessoas</title>
 
-        for (let i = 0; i < listalivros.length; i++) {
-            const pessoa = listalivros[i];
-            const tag = '<h5>' + i + '- livro: ' + pessoa.livro + ' | autor: '+ pessoa.autor + ' |  ano:' + pessoa.ano '</h5>';
-            container.innerHTML += tag;
-        }
+  <script>
+    
+    let pilhaPessoas = [];
+
+    function mostrarLista() {
+      const container = document.getElementById('minhaDiv');
+      container.innerHTML = ''; 
+
+      for (let i = 0; i < pilhaPessoas.length; i++) {
+        const pessoa = pilhaPessoas[i];
+        const tag = '<h5>' + i + '- Livro: ' + pessoa.nome + ' | Autor: '+ pessoa.contato + ' | Ano:' + '</h5>';
+        container.innerHTML += tag;
+      }
     }
 	
 	function limpaCampos() {
@@ -28,67 +28,74 @@
 
     function adicionar() {
 	  // pega os valores digitados nos inputs
-  	    const livro = document.getElementById('livro').value;
-        const autor = document.getElementById('autor').value;
-        const ano = document.getElementById('ano').value;
+  	  const nome = document.getElementById('nome').value;
+      const autor = document.getElementById('contato').value;
+      const ano = document.getElementById('ano').value;
 
-        pilhaPessoas.push({ livro, autor, ano });
+
+      pilhaPessoas.push({ nome, contato, ano });
 
       // limpa os campos e atualiza a lista
-	    limpaCampos();
-        mostrarLista();
+	  limpaCampos();
+      mostrarLista();
     }
 
     function posicao() {
-      const indice = Number(prompt('Qual livro da lista deseja consultar?'));
+      const indice = Number(prompt('Qual posição da lista deseja consultar?'));
 
-      if (indice < 0 || indice >= listalivros.length) {
+      if (indice < 0 || indice >= pilhaPessoas.length) {
         alert('Posição inválida!');
         return;
       }
 
-      const livro = listalivros[indice];
-      alert('Na posição ' + indice + ' está: livro: ' + livro.autor + ' - autor: ' + autor.ano);
+      const pessoa = pilhaPessoas[indice];
+      alert('Na posição ' + indice + ' está: Nome: ' + pessoa.nome + ' - Contato: ' + pessoa.contato);
     }
 
     function limparLista() {
-      listalivros = [];
+      pilhaPessoas = [];
       mostrarLista();
     }
 
     function remover() {
-      if (listalivros.length === 0) {
-        alert('A lista está vazia!');
+      if (pilhaPessoas.length === 0) {
+        alert('A pilha está vazia!');
       } else {
-        const removido = listalivros.pop();
-        alert('Removido: ' + removido.livro + ' - ' + removido.autor + ' - ' + removido.ano);
+        const removido = pilhaPessoas.pop();
+        alert('Removido: ' + removido.livro + ' - ' + removido.autor + ' - ' removido.ano);
         mostrarLista();
       }
     }
 
+    function inverterPilha() {
+      pilhaPessoas.reverse();
+      mostrarLista();
+    }
   </script>
 </head>
 
 <body>
   <h1>Lista de Livros</h1>
 
-	<label>Livro:</label>
-	<input type="text" id="livro" placeholder="Digite um nome"> 
+	<label>livro:</label>
+	<input type="text" id="livro" placeholder="Digite um livro"> 
 
-	<label>Autor:</label>
+	<label>autor:</label>
 	<input type="text" id="autor" placeholder="Digite o autor">
 
     <label>Ano:</label>
 	<input type="text" id="ano" placeholder="Digite o ano">
+
 
 	<button onclick="adicionar()">Adicionar</button>
 	
 	
 	<hr>
 
-    <button onclick="posicao()">mostrar Lista</button>
-    <button onclick="remover()">Remover o Último</button>
-    <button onclick="limparLista()">Limpar</button>
+    <button onclick="posicao()">Posição</button>
+    <button onclick="remover()">Remover Último</button>
+    <button onclick="limparLista()">Limpar Lista</button>
+    <button onclick="inverterPilha()">Inverter</button>
 
     <br><br>
   
