@@ -13,8 +13,8 @@
         container.innerHTML = ''; 
 
         for (let i = 0; i < listalivros.length; i++) {
-            const livro = listalivros[i];
-            const tag = '<h5>' + i + '- livro: ' + pessoa.autor + ' | autor: '+ pessoa.ano + '</h5>';
+            const pessoa = listalivros[i];
+            const tag = '<h5>' + i + '- livro: ' + pessoa.livro + ' | autor: '+ pessoa.autor + ' |  ano:' + pessoa.ano '</h5>';
             container.innerHTML += tag;
         }
     }
@@ -76,7 +76,10 @@
 	<input type="text" id="livro" placeholder="Digite um nome"> 
 
 	<label>Autor:</label>
-	<input type="text" id="contato" placeholder="Digite o autor">
+	<input type="text" id="autor" placeholder="Digite o autor">
+
+    <label>Ano:</label>
+	<input type="text" id="ano" placeholder="Digite o ano">
 
 	<button onclick="adicionar()">Adicionar</button>
 	
