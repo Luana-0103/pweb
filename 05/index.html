@@ -48,7 +48,7 @@
       }
 
       const pessoa = pilhaPessoas[indice];
-      alert('Na posição ' + indice + ' está: Nome: ' + pessoa.nome + ' - Contato: ' + pessoa.contato);
+      alert('Na posição ' + indice + ' está: Livro: ' + pessoa.Livro + ' - Autor: ' + pessoa.Autor  + ' - Ano: ' + pessoa.Ano);
     }
 
     function limparLista() {
@@ -61,7 +61,7 @@
         alert('A pilha está vazia!');
       } else {
         const removido = pilhaPessoas.pop();
-        alert('Removido: ' + removido.nome + ' - ' + removido.contato);
+        alert('Removido: ' + removido.Livro + ' - ' + removido.Autor + ' - ' + removido.Ano);
         mostrarLista();
       }
     }
@@ -74,13 +74,16 @@
 </head>
 
 <body>
-  <h1>Lista de Pessoas</h1>
+  <h1>Lista de Livros</h1>
 
-	<label>Nome:</label>
-	<input type="text" id="nome" placeholder="Digite o nome"> 
+	<label>Livro:</label>
+	<input type="text" id="Livro" placeholder="Digite o Nome do Livro"> 
 
-	<label>Contato:</label>
-	<input type="text" id="contato" placeholder="Digite o contato">
+	<label>Autor:</label>
+	<input type="text" id="Autor" placeholder="Digite o Autor">
+
+  <label>Ano:</label>
+	<input type="text" id="Ano" placeholder="Digite o Ano"> 
 
 	<button onclick="adicionar()">Adicionar</button>
 	
