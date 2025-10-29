@@ -26,12 +26,12 @@
 
             function posicao() {
                     var indice = prompt('Qual posição da lista deseja consultar?');
-                    indice = Number(indice);
-                    if ( indice < 0 || indice >= Pessoas.length) {
-                        alert( "Posição Inválida" );
-                    }  
-                    return;
-                    alert('Posição' +indice+ 'está o' +Pessoas[indice]);
+                 if ( indice < 0 || indice > Pessoas.length-1 ) {
+                    alert( "Posição Inválida" );
+                }  
+                else{
+                   alert(Pessoas[indice]);
+                }
                 }
             function remover(){
                 if(Pessoas.length === 0){
