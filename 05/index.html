@@ -14,26 +14,22 @@
 
       for (let i = 0; i < pilhaPessoas.length; i++) {
         const pessoa = pilhaPessoas[i];
-        const tag = '<h5>' + i + '- Livro: ' + pessoa.nome + ' | Autor: '+ pessoa.contato + ' | Ano:' + '</h5>';
+        const tag = '<h5>' + i + '- Nome: ' + pessoa.nome + ' | Contato: '+ pessoa.contato + '</h5>';
         container.innerHTML += tag;
       }
     }
 	
 	function limpaCampos() {
-	  document.getElementById('livro').value = '';
-      document.getElementById('autor').value = '';
-      document.getElementById('ano').value = '';
-
+	  document.getElementById('nome').value = '';
+      document.getElementById('contato').value = '';
 	}
 
     function adicionar() {
 	  // pega os valores digitados nos inputs
   	  const nome = document.getElementById('nome').value;
-      const autor = document.getElementById('contato').value;
-      const ano = document.getElementById('ano').value;
+      const contato = document.getElementById('contato').value;
 
-
-      pilhaPessoas.push({ nome, contato, ano });
+      pilhaPessoas.push({ nome, contato });
 
       // limpa os campos e atualiza a lista
 	  limpaCampos();
@@ -62,7 +58,7 @@
         alert('A pilha está vazia!');
       } else {
         const removido = pilhaPessoas.pop();
-        alert('Removido: ' + removido.livro + ' - ' + removido.autor + ' - ' + removido.ano);
+        alert('Removido: ' + removido.nome + ' - ' + removido.contato);
         mostrarLista();
       }
     }
@@ -75,17 +71,13 @@
 </head>
 
 <body>
-  <h1>Lista de Livros</h1>
+  <h1>Lista de Pessoas</h1>
 
-	<label>livro:</label>
-	<input type="text" id="livro" placeholder="Digite um livro"> 
+	<label>Nome:</label>
+	<input type="text" id="nome" placeholder="Digite o nome"> 
 
-	<label>autor:</label>
-	<input type="text" id="autor" placeholder="Digite o autor">
-
-    <label>Ano:</label>
-	<input type="text" id="ano" placeholder="Digite o ano">
-
+	<label>Contato:</label>
+	<input type="text" id="contato" placeholder="Digite o contato">
 
 	<button onclick="adicionar()">Adicionar</button>
 	
