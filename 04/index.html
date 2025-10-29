@@ -6,7 +6,7 @@
         <script >
 
             let Pessoas = Array();
-        
+            let frutas = Array();
             
 
             function mostrarLista(){
@@ -26,7 +26,7 @@
 
             function posicao() {
                     var indice = prompt('Qual posição da lista deseja consultar?');
-                 if ( indice < 0 || indice > Pessoas.length-1 ) {
+                    if ( indice < 0 || indice > Pessoas.length-1 ) {
                     alert( "Posição Inválida" );
                 }  
                 else{
@@ -47,6 +47,25 @@
             function limpar(){
                 Pessoas = [];
                 mostrarLista();
+            }
+            function mostrarListafrutas(){
+
+            const container = document.getElementById('minhaDiv2');
+                 for (var i = 0; i < frutas.length; i++) {
+                    var tag = '<h5>' + i + '-' + frutas[i] + '</h5>';
+                    container.innerHTML += tag;
+            
+                }
+            }
+
+            function posicaofrutas(){
+                var indice = prompt('Qual posição da lista deseja consultar?');
+                if ( indice < 0 || indice > frutas.length-1 ) {
+                    alert( "Posição Inválida" );
+                }  
+                else{
+                   alert(frutas[indice]);
+                }
             }
 
         </script> 
