@@ -14,22 +14,25 @@
 
       for (let i = 0; i < pilhaPessoas.length; i++) {
         const pessoa = pilhaPessoas[i];
-        const tag = '<h5>' + i + '- Nome: ' + pessoa.nome + ' | Contato: '+ pessoa.contato + '</h5>';
+        const tag = '<h5>' + i + '- Livro: ' + pessoa.nome + ' | Autor: '+ pessoa.contato + ' | Ano:' + '</h5>';
         container.innerHTML += tag;
       }
     }
 	
 	function limpaCampos() {
-	  document.getElementById('nome').value = '';
-      document.getElementById('contato').value = '';
+	  document.getElementById('Livro').value = '';
+    document.getElementById('Autor').value = '';
+    document.getElementById('Ano').value = '';
+
 	}
 
     function adicionar() {
 	  // pega os valores digitados nos inputs
-  	  const nome = document.getElementById('nome').value;
-      const contato = document.getElementById('contato').value;
+  	  const Livro = document.getElementById('Livro').value;
+      const Autor = document.getElementById('Autor').value;
+      const Ano = document.getElementById('Ano').value;
 
-      pilhaPessoas.push({ nome, contato });
+      pilhaPessoas.push({ Livro, Autor,Ano });
 
       // limpa os campos e atualiza a lista
 	  limpaCampos();
