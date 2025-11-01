@@ -90,6 +90,13 @@
 	
 	function removerContato(indice) {
       // implementar a função remover a partir de um indice
+       if (pilhaCursos.length === 0) {
+        alert('A pilha está vazia!');
+      } else {
+        const removido = pilhaCursos.pop();
+        alert('Removido: ' + removido.Curso + ' - ' + removido.Regime + ' - ' + removido.Carga);
+        mostrarLista();
+      }
     }	
 	
 
