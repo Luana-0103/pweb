@@ -76,7 +76,10 @@
     }
 	
 	function salvar() {
-		// implementar função salvar
+		// implementar função salvar// 
+    const Curso = document.getElementById('Curso').value;
+    const Regime = document.getElementById('Autor').value;
+    const Carga= document.getElementById('Ano').value;
     }
 
    function editarContato(indice) {
@@ -105,8 +108,13 @@
           <input type="text" id="nome" class="form-control" placeholder="Digite o nome">
         </div>
 
+         <div class="col-md-5">
+          <label class="form-label">Regime</label>
+          <input type="text" id="contato" class="form-control" placeholder="Digite o contato">
+        </div>
+
         <div class="col-md-5">
-          <label class="form-label">Contato</label>
+          <label class="form-label">Carga Horária (h)</label>
           <input type="text" id="contato" class="form-control" placeholder="Digite o contato">
         </div>
 
