@@ -6,15 +6,15 @@
 
   <script>
     
-    let pilhaPessoas = [];
+    let pilhaLivros = [];
 
     function mostrarLista() {
       const container = document.getElementById('minhaDiv');
       container.innerHTML = ''; 
 
-      for (let i = 0; i < pilhaPessoas.length; i++) {
-        const pessoa = pilhaPessoas[i];
-        const tag = '<h5>' + i + '- Livro: ' + pessoa.nome + ' | Autor: '+ pessoa.contato + ' | Ano:' + '</h5>';
+      for (let i = 0; i < pilhaLivros.length; i++) {
+        const Livros = pilhaLivros[i];
+        const tag = '<h5>' + i + '- Livro: ' + Livros.nome + ' | Autor: '+ Livros.Autor + ' | Ano:' + Livros.Ano + '</h5>';
         container.innerHTML += tag;
       }
     }
@@ -36,38 +36,38 @@
 
       // limpa os campos e atualiza a lista
 	  limpaCampos();
-      mostrarLista();
+    mostrarLista();
     }
 
     function posicao() {
       const indice = Number(prompt('Qual posição da lista deseja consultar?'));
 
-      if (indice < 0 || indice >= pilhaPessoas.length) {
+      if (indice < 0 || indice >= pilhaLivros.length) {
         alert('Posição inválida!');
         return;
       }
 
-      const pessoa = pilhaPessoas[indice];
-      alert('Na posição ' + indice + ' está: Livro: ' + pessoa.Livro + ' - Autor: ' + pessoa.Autor  + ' - Ano: ' + pessoa.Ano);
+      const pessoa = pilhaLivros[indice];
+      alert('Na posição ' + indice + ' está: Livro: ' + Livros.Livro + ' - Autor: ' + Livros.Autor  + ' - Ano: ' + Livros.Ano);
     }
 
     function limparLista() {
-      pilhaPessoas = [];
+      pilhaLivros = [];
       mostrarLista();
     }
 
     function remover() {
-      if (pilhaPessoas.length === 0) {
+      if (pilhaLivros.length === 0) {
         alert('A pilha está vazia!');
       } else {
-        const removido = pilhaPessoas.pop();
+        const removido = pilhaLivros.pop();
         alert('Removido: ' + removido.Livro + ' - ' + removido.Autor + ' - ' + removido.Ano);
         mostrarLista();
       }
     }
 
     function inverterPilha() {
-      pilhaPessoas.reverse();
+      pilhaLivros.reverse();
       mostrarLista();
     }
   </script>
