@@ -81,15 +81,13 @@
 		// implementar função salvar// 
     const Curso = document.getElementById('nome').value;
     const Regime = document.getElementById('Regime').value;
-    const Carga= document.getElementById('carga').value;
+    const Carga= document.getElementById('Carga').value;
     }
 
    function editarContato(indice) {
       // implementar a função editar a partir de um indice
-      const Curso = pilhaCursos[indice];
-      document.getElementById('nome')
-      document.getElementById('Regime')
-       document.getElementById('carga')
+      pilhaCursos.push({nome,Regime,Carga})
+      
     }
 	
 	function removerContato(indice) {
