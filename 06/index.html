@@ -19,13 +19,13 @@
       corpo.innerHTML = ''; // limpa o corpo da tabela
 
       for (let i = 0; i < pilhaCursos.length; i++) {
-        const Curso = pilhaCursos[i];
+        const Cursos = pilhaCursos[i];
 		const linha =
 		  "<tr>" +
 			"<td>" + i + "</td>" +
-			"<td>" + Curso.nome + "</td>" +
-			"<td>" + Curso.Regime + "</td>" +
-      "<td>" + Curso.Carga + "</td>" +
+			"<td>" + Cursos.Curso + "</td>" +
+			"<td>" + Cursos.Regime + "</td>" +
+      "<td>" + Cursos.Carga + "</td>" +
 			"<td>" +
 				"<div class='mt-3 d-flex gap-2'>" +
 				  "<button class='btn btn-secondary' onclick='editarContato(" + i + ")'>Editar</button>" +
@@ -39,7 +39,7 @@
 
 	
 	function limpaCampos() {
-	  document.getElementById('nome').value = '';
+	  document.getElementById('Curso').value = '';
     document.getElementById('Regime').value = '';
     document.getElementById('Carga').value = '';
 	}
@@ -53,8 +53,8 @@
         return;
       }
 
-      const Curso = pilhaCursos[indice];
-      alert('Na posição ' + indice + ' está: Nome: ' + Curso.nome +  ' - Regime: ' + Curso.Regime + ' - Carga: ' + Curso.Carga);
+      const Cursos = pilhaCursos[indice];
+      alert('Na posição ' + indice + ' está: Nome: ' + Cursos.Curso +  ' - Regime: ' + Cursos.Regime + ' - Carga: ' + Cursos.Carga);
     }
 
     function limparLista() {
@@ -67,26 +67,26 @@
         alert('A pilha está vazia!');
       } else {
         const removido = pilhaCursos.pop();
-        alert('Removido: ' + removido.nome + ' - ' + removido.Carga);
+        alert('Removido: ' + removido.Curso + ' - ' + removido.Regime + ' - '+ removido.Carga );
         mostrarLista();
       }
     }
 
     function inverterPilha() {
-      pilhaPessoas.reverse();
+      pilhaCursos.reverse();
       mostrarLista();
     }
 	
 	function salvar() {
 		// implementar função salvar// 
-    const Curso = document.getElementById('nome').value;
+    const Curso = document.getElementById('Curso').value;
     const Regime = document.getElementById('Regime').value;
     const Carga= document.getElementById('Carga').value;
     }
 
    function editarContato(indice) {
       // implementar a função editar a partir de um indice
-      pilhaCursos.push({nome,Regime,Carga})
+      pilhaCursos.push({Curso,Regime,Carga})
       
     }
 	
@@ -115,7 +115,7 @@
       <div class="row g-3">
 	  
         <div class="col-md-4">
-          <label class="form-label">Nome</label>
+          <label class="form-label">Nome Do Curso</label>
           <input type="text" id="nome" class="form-control" placeholder="Ex: Informática,saneamento,Estradas,Edificações">
         </div>
 
