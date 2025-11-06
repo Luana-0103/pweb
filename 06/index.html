@@ -99,8 +99,11 @@
 
    function editarContato(indice) {
       // implementar a função editar a partir de um indice
-      pilhaCursos.push({Curso,Regime,Carga})
-      
+      const Cursos = pilhaCursos[indice];
+      document.getElementById('Curso').value = Cursos.Curso;
+      document.getElementById('Regime').value = Cursos.Regime;
+      document.getElementById('Carga').value = Cursos.Carga;
+      indiceEdicao = indice;  
     }
 	
 	function removerContato(indice) {
@@ -129,7 +132,7 @@
 	  
         <div class="col-md-4">
           <label class="form-label">Nome Do Curso</label>
-          <input type="text" id="nome" class="form-control" placeholder="Ex: Informática,saneamento,Estradas,Edificações">
+          <input type="text" id="Curso" class="form-control" placeholder="Ex: Informática,saneamento,Estradas,Edificações">
         </div>
 
         <div class="col-md-4">
@@ -142,7 +145,7 @@
 
         <div class="col-md-4">
           <label class="form-label">Carga Horária (h)</label>
-          <input type="text" id="contato" class="form-control" placeholder="Ex:1200h">
+          <input type="text" id="Carga" class="form-control" placeholder="Ex:1200h">
         </div>
 
 
