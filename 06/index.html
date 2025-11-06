@@ -78,11 +78,24 @@
     }
 	
 	function salvar() {
-		// implementar função salvar// 
-    const Curso = document.getElementById('Curso').value;
-    const Regime = document.getElementById('Regime').value;
-    const Carga= document.getElementById('Carga').value;
+		// implementar função salvar//
+    const Curso = document.getElementById("Curso").value.trim();
+    const Regime = document.getElementById('Regime').value.trim();
+    const Carga= document.getElementById('Carga').valuetrim();
+    
+    if (indiceEdicao === null){
+      pilhaCursos.push({Curso,Regime,Carga});
     }
+      else {
+        pilhaCursos[indiceEdicao] = {Curso,Regime,Carga};
+        indiceEdicao = null; 
+      }
+
+      document.getElementById("Curso").value = '';
+      document.getElementById("Regime").value = '';
+      document.getElementById("Carga").value = '';
+      mostrarLista();
+  }
 
    function editarContato(indice) {
       // implementar a função editar a partir de um indice
