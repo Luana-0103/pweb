@@ -11,8 +11,8 @@
   <script>
     
     let pilhaCursos = [];
-	
-	let indiceEdicao = null; // controla se estamos editando alguém
+  
+  let indiceEdicao = null; // controla se estamos editando alguém
 
   function mostrarLista() {
       const corpo = document.getElementById('tabelaCorpo');
@@ -20,29 +20,29 @@
 
       for (let i = 0; i < pilhaCursos.length; i++) {
         const Cursos = pilhaCursos[i];
-		const linha =
-		  "<tr>" +
-			"<td>" + i + "</td>" +
-			"<td>" + Cursos.Curso + "</td>" +
-			"<td>" + Cursos.Regime + "</td>" +
+    const linha =
+      "<tr>" +
+      "<td>" + i + "</td>" +
+      "<td>" + Cursos.Curso + "</td>" +
+      "<td>" + Cursos.Regime + "</td>" +
       "<td>" + Cursos.Carga + "</td>" +
-			"<td>" +
-				"<div class='mt-3 d-flex gap-2'>" +
-				  "<button class='btn btn-secondary' onclick='editarContato(" + i + ")'>Editar</button>" +
-				  "<button class='btn btn-danger' onclick='removerContato(" + i + ")'>Remover</button>" +
-				"</div>" +
-			"</td>" +
-		  "</tr>";
+      "<td>" +
+        "<div class='mt-3 d-flex gap-2'>" +
+          "<button class='btn btn-secondary' onclick='editarContato(" + i + ")'>Editar</button>" +
+          "<button class='btn btn-danger' onclick='removerContato(" + i + ")'>Remover</button>" +
+        "</div>" +
+      "</td>" +
+      "</tr>";
         corpo.innerHTML += linha;
       }
     }
 
-	
-	function limpaCampos() {
-	  document.getElementById('Curso').value = '';
+  
+  function limpaCampos() {
+    document.getElementById('Curso').value = '';
     document.getElementById('Regime').value = '';
     document.getElementById('Carga').value = '';
-	}
+  }
 
 
     function posicao() {
@@ -76,9 +76,9 @@
       pilhaCursos.reverse();
       mostrarLista();
     }
-	
-	function salvar() {
-		// implementar função salvar//
+  
+  function salvar() {
+    // implementar função salvar//
     const Curso = document.getElementById("Curso").value.trim();
     const Regime = document.getElementById('Regime').value.trim();
     const Carga= document.getElementById('Carga').value.trim();
@@ -105,8 +105,8 @@
       document.getElementById('Carga').value = Cursos.Carga;
       indiceEdicao = indice;  
     }
-	
-	function removerContato(indice) {
+  
+  function removerContato(indice) {
       // implementar a função remover a partir de um indice
        if (pilhaCursos.length === 0) {
         alert('A pilha está vazia!');
@@ -115,21 +115,21 @@
         alert('Removido: ' + removido.Curso + ' - ' + removido.Regime + ' - ' + removido.Carga);
         mostrarLista();
       }
-    }	
-	
+    } 
+  
 
-	
+  
   </script>
 </head>
 
 <body>
   <div class="container mt-5">
     <h1 class="mb-4 text-center">Cadastro de Cursos</h1>
-	
-	
-	<div class="card p-4 shadow-sm">
+  
+  
+  <div class="card p-4 shadow-sm">
       <div class="row g-3">
-	  
+    
         <div class="col-md-4">
           <label class="form-label">Nome Do Curso</label>
           <input type="text" id="Curso" class="form-control" placeholder="Ex: Informática,saneamento,Estradas,Edificações">
@@ -149,19 +149,19 @@
         </div>
 
 
-		
+    
       </div>
 
       <div class="mt-3 d-flex gap-2">
         <button class="btn btn-secondary" onclick="salvar()">Salvar</button>
 
       </div>
-	  
+    
     </div>
-	
+  
 
-	
-	<hr>
+  
+  <hr>
 
     <button class="btn btn-secondary" onclick="posicao()">Posição</button>
     <button class="btn btn-danger" onclick="remover()">Remover Último</button>
@@ -178,7 +178,7 @@
           <th>Nome</th>
           <th>Regime</th>
           <th>Carga Horária</th>
-		      <th>Ações</th>
+          <th>Ações</th>
         </tr>
       </thead>
       <tbody id="tabelaCorpo">
